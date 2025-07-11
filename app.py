@@ -3,7 +3,7 @@ from gtts import gTTS
 import os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(name)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -21,5 +21,4 @@ def index():
 def download(filename):
     return send_file(f'static/audio/{filename}', as_attachment=True)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# ⚠️ Ne pas inclure app.run() ici → gunicorn le fera sur Render

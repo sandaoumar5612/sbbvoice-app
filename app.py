@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # ✅ CORRECTION : name au lieu de name
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

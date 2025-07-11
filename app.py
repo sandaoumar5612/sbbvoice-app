@@ -3,7 +3,7 @@ from gtts import gTTS
 import os
 from datetime import datetime
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

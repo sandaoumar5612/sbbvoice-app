@@ -3,7 +3,7 @@ from gtts import gTTS
 import os
 from datetime import datetime
 
-# ✅ CORRECT : name utilisé
+# ✅ CORRECTION : utilisation de name
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -22,4 +22,4 @@ def index():
 def download(filename):
     return send_file(f'static/audio/{filename}', as_attachment=True)
 
-# ⚠️ PAS DE app.run() ICI — Render utilise gunicorn pour lancer l'app
+# ❌ PAS de app.run() ici → gunicorn s'en charge sur Render
